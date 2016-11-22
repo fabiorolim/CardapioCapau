@@ -107,8 +107,8 @@ public class ListCardapios extends ListActivity {
                 Toast.makeText(getApplicationContext(), "Erro ao tentar converter JSON!", Toast.LENGTH_LONG).show();
                 finish();
             }else if (e instanceof NullPointerException){
-                    Toast.makeText(getApplicationContext(), "Não há cardapios cadastrados!", Toast.LENGTH_LONG).show();
-                    finish();
+                Toast.makeText(getApplicationContext(), "Não há cardapios cadastrados!", Toast.LENGTH_LONG).show();
+                finish();
             }else if (e == null) {
                 setListAdapter(adapter);
                 if (dialog.isShowing()) {

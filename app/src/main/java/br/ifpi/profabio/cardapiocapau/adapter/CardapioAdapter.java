@@ -80,9 +80,9 @@ public class CardapioAdapter extends BaseAdapter {
         //String d = "2016-03-18";
         SimpleDateFormat sd1 = new SimpleDateFormat("yyyy-MM-dd");
         Date d1 = sd1.parse(data);
-        System.out.println(d1);
+        //System.out.println(d1);
 
-        SimpleDateFormat sd2 = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat sd2 = new SimpleDateFormat("dd/MM/yyyy");
         String dataf = sd2.format(d1);
         //System.out.println(dataf);
 
