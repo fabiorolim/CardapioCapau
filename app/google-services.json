@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "318948563451",
+    "firebase_url": "https://cardapiocapau.firebaseio.com",
+    "project_id": "cardapiocapau",
+    "storage_bucket": "cardapiocapau.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318948563451:android:117cf07a3f190cfb",
+        "android_client_info": {
+          "package_name": "br.ifpi.profabio.cardapiocapau"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318948563451-ftdq3m0pag4fia7hvsgnhi5doppb622v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.ifpi.profabio.cardapiocapau",
+            "certificate_hash": "8371BC52CD221156D9AB028597FD7BCA8C9580F5"
+          }
+        },
+        {
+          "client_id": "318948563451-86kfs0k1p9hbtej1894urrnokmfkkf3r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd0Upuh_YXsmlLRfM4Q8aN_Wr10nhqaNE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318948563451-86kfs0k1p9hbtej1894urrnokmfkkf3r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
