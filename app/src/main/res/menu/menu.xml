@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_novo_cardapio"
+        android:title="Novo Cardapio"
+        android:showAsAction="never|withText"
+        tools:ignore="AppCompatResource" />
 <item android:id="@+id/menu_sobre"
     android:title="Sobre"
-    android:showAsAction="ifRoom|withText"
+    android:showAsAction="never|withText"
     tools:ignore="AppCompatResource" />
 
     <item android:id="@+id/menu_sair"
         android:title="Sair"
-        android:showAsAction="ifRoom|withText"
+        android:showAsAction="never|withText"
         tools:ignore="AppCompatResource" />
+
 </menu>

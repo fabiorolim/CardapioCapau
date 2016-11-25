@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CardapioCapau</string>
+    <string name="data">data</string>
+    <string name="prato_principal">Prato principal</string>
+    <string name="sobremesa">sobremesa</string>
+    <string name="info">Informações nutricionais</string>
+    <string name="cadastrar">CADASTRAR</string>
+    <string name="Tipo">tipo</string>
+    <string name="tipo">Tipo</string>
 </resources>

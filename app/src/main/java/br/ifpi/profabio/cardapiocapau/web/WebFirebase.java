@@ -2,6 +2,7 @@ package br.ifpi.profabio.cardapiocapau.web;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import br.ifpi.profabio.cardapiocapau.aplication.ConfigFirebase;
 import br.ifpi.profabio.cardapiocapau.data.Cardapio;
 
 
@@ -24,15 +26,15 @@ import br.ifpi.profabio.cardapiocapau.data.Cardapio;
  */
 public class WebFirebase {
 
-    private static final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-    private static final DatabaseReference cardapioReference = databaseReference.child("cardapios");
+    //private static final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+    //private static final DatabaseReference cardapioReference = databaseReference.child("cardapios");
     //private static List<Cardapio> foundItems;
 
-    public static final List<Cardapio> findAllItems(Context context) throws Exception{
+    public static final List<Cardapio> findAllItems(final Context context) throws Exception{
         final List<Cardapio> foundItems = new ArrayList<Cardapio>(5);
-        //Cardapio cardapio = new Cardapio(001, "2016-11-11","feijoada", "sorvete", "nada", "almoço");
+        //Cardapio cardapio = new Cardapio("2016-11-11","feijoada", "sorvete", "nada", "almoço");
         //foundItems.add(cardapio);
-        cardapioReference.addValueEventListener(new ValueEventListener() {
+        ConfigFirebase.cardapioReferences().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot child : dataSnapshot.getChildren()){
@@ -40,12 +42,12 @@ public class WebFirebase {
                     foundItems.add(cardapio);
                 }
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Toast.makeText(context, "Erro ao tentar consultar dados!", Toast.LENGTH_LONG ).show();
             }
         });
+
         return foundItems;
     }
 }

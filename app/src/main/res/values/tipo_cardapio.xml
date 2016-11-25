@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="tipo_cardapio">
+        <item name="almoço"></item>
+        <item name="jantar"></item>
+        <item name="outro"></item>
+    </array>
+</resources>

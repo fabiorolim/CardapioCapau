@@ -70,6 +70,11 @@ public class ListCardapios extends ListActivity {
             finish();
             return true;
         }
+        if (item.getItemId() == R.id.menu_novo_cardapio){
+            Intent intent = new Intent(getApplicationContext(), NovoCardapio.class);
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -101,14 +106,19 @@ public class ListCardapios extends ListActivity {
         }
 
         @Override
+        protected void onProgressUpdate(Cardapio... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
         protected void onPostExecute(Exception e) {
             super.onPostExecute(e);
             if (e instanceof JSONException) {
                 Toast.makeText(getApplicationContext(), "Erro ao tentar converter JSON!", Toast.LENGTH_LONG).show();
-                finish();
+                //finish();
             }else if (e instanceof NullPointerException){
                 Toast.makeText(getApplicationContext(), "Não há cardapios cadastrados!", Toast.LENGTH_LONG).show();
-                finish();
+                //finish();
             }else if (e == null) {
                 setListAdapter(adapter);
                 if (dialog.isShowing()) {
