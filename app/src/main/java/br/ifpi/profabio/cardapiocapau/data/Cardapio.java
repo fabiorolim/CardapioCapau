@@ -12,7 +12,7 @@ import br.ifpi.profabio.cardapiocapau.web.WebFirebase;
  * Created by fabiorolim on 17/03/16.
  */
 public class Cardapio{
-    //private int cod;
+    private String chave;
     private String data;
     private String principal;
     private String sobremesa;
@@ -38,8 +38,16 @@ public class Cardapio{
 
     }
 
+    public Cardapio(String chave, String data, String principal, String sobremesa, String info, String tipo) {
+        this.chave = chave;
+        this.data = data;
+        this.principal = principal;
+        this.sobremesa = sobremesa;
+        this.info = info;
+        this.tipo = tipo;
+    }
+
     public Cardapio(String data, String principal, String sobremesa, String info, String tipo) {
-        //this.cod = cod;
         this.data = data;
         this.principal = principal;
         this.sobremesa = sobremesa;
@@ -49,13 +57,13 @@ public class Cardapio{
 
 
 
-    //public int getCod(){
-    //    return this.cod;
-    //}
+    public String getChave(){
+        return this.chave;
+    }
 
-   // public void setCod(int cod){
-   //     this.cod = cod;
-   // }
+    public void setChave(String chave){
+        this.chave = chave;
+    }
 
     public String getData() {
         return data;

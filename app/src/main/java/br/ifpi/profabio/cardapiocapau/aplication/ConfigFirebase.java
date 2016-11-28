@@ -12,6 +12,8 @@ import br.ifpi.profabio.cardapiocapau.data.Cardapio;
 public class ConfigFirebase {
     private static DatabaseReference firebase;
     private static DatabaseReference cardapio_references;
+    private static DatabaseReference push_cardarpio_references;
+
     public static DatabaseReference getFirebase(){
         if(firebase==null){
             firebase = FirebaseDatabase.getInstance().getReference();
@@ -21,5 +23,10 @@ public class ConfigFirebase {
     public static DatabaseReference cardapioReferences(){
         cardapio_references = ConfigFirebase.getFirebase().child("cardapios");
         return cardapio_references;
+    }
+    public static DatabaseReference pushCardapioReferences(){
+        cardapio_references = ConfigFirebase.getFirebase().child("cardapios");
+        push_cardarpio_references = cardapio_references.push();
+        return push_cardarpio_references;
     }
 }

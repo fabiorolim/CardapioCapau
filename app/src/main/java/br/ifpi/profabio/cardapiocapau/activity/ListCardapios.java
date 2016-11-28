@@ -6,9 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,12 +30,18 @@ public class ListCardapios extends ListActivity {
     private CardapioAdapter adapter;
     private Cardapio cardapio;
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new InvokeWebserviceTask().execute(this);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //adapter = new CardapioAdapter(this, Cardapio.gerarCardapios());
         //setListAdapter(adapter);
-        new InvokeWebserviceTask().execute(this);
     }
 
     @Override
@@ -78,7 +87,7 @@ public class ListCardapios extends ListActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private class InvokeWebserviceTask extends AsyncTask<Context, Cardapio, Exception>{
+    private class InvokeWebserviceTask extends AsyncTask<Context, Adapter, Exception>{
 
         private ProgressDialog dialog =
                 new ProgressDialog(ListCardapios.this);
@@ -96,6 +105,8 @@ public class ListCardapios extends ListActivity {
             Exception e = null;
             try{
                 adapter = new CardapioAdapter(context, Cardapio.gerarCardapios(context));
+                SystemClock.sleep(5000);
+                publishProgress(adapter);
             }catch (JSONException j){
                 e = j;
             }catch (NullPointerException n){
@@ -106,27 +117,24 @@ public class ListCardapios extends ListActivity {
         }
 
         @Override
-        protected void onProgressUpdate(Cardapio... values) {
-            super.onProgressUpdate(values);
+        protected void onProgressUpdate(Adapter... values) {
+            setListAdapter((ListAdapter) values[0]);
         }
 
         @Override
         protected void onPostExecute(Exception e) {
-            super.onPostExecute(e);
+            //super.onPostExecute(e);
             if (e instanceof JSONException) {
                 Toast.makeText(getApplicationContext(), "Erro ao tentar converter JSON!", Toast.LENGTH_LONG).show();
-                //finish();
+                finish();
             }else if (e instanceof NullPointerException){
                 Toast.makeText(getApplicationContext(), "Não há cardapios cadastrados!", Toast.LENGTH_LONG).show();
-                //finish();
-            }else if (e == null) {
-                setListAdapter(adapter);
+                finish();
+            }else if (e == null){
                 if (dialog.isShowing()) {
                     dialog.dismiss();
                 }
             }
         }
-
     }
-
 }
