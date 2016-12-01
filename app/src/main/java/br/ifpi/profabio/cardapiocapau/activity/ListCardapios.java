@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -80,7 +81,7 @@ public class ListCardapios extends ListActivity {
             return true;
         }
         if (item.getItemId() == R.id.menu_novo_cardapio){
-            Intent intent = new Intent(getApplicationContext(), NovoCardapio.class);
+            Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);
             return true;
         }

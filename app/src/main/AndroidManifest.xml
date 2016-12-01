@@ -19,8 +19,10 @@
         <activity android:name=".activity.ActivityCardapio" android:screenOrientation="portrait"></activity>
         <activity android:name=".activity.SobreActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".activity.NovoCardapio" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.Login" android:screenOrientation="portrait"></activity>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission."/>
 
 </manifest>

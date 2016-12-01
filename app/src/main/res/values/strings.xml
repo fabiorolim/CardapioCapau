@@ -7,4 +7,7 @@
     <string name="cadastrar">CADASTRAR</string>
     <string name="Tipo">tipo</string>
     <string name="tipo">Tipo</string>
+    <string name="usuario">Usuario</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">Entrar</string>
 </resources>

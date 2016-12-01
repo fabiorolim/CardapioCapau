@@ -1,5 +1,6 @@
 package br.ifpi.profabio.cardapiocapau.aplication;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -20,6 +21,7 @@ public class ConfigFirebase {
         }
         return firebase;
     }
+
     public static DatabaseReference cardapioReferences(){
         cardapio_references = ConfigFirebase.getFirebase().child("cardapios");
         return cardapio_references;
